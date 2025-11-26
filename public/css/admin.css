@@ -1,0 +1,45 @@
+body {
+    background-color: #f3f4f6;
+}
+/* Estilos para a sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #212529;
+    color: white;
+    padding: 1.5rem;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+}
+
+.active {
+    color: #FFFFFF !important;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 2rem;
+}
+
+/* Estilos para a navbar fixa no desktop (para compensar a sidebar) */
+@media (min-width: 992px) {
+    .main-navbar-desktop-fixed {
+        left: 250px; /* Offset pela largura da sidebar */
+        width: calc(100% - 250px); /* Largura restante */
+        z-index: 1030; /* Abaixo da sidebar, mas acima do conteúdo */
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
