@@ -17,10 +17,10 @@
 
         <!-- SIDEBAR (Menu) -->
         <aside class="sidebar shadow-lg">
-            <h2 class="fs-4 fw-bold mb-4 text-primary">Admin Blog</h2>
+            <h2 class="fs-4 fw-bold mb-4 text-primary">Central Jobify</h2>
             <nav class="nav flex-column">
                 <a class="nav-link text-white-50 rounded mb-2<?php echo ($active == 'posts' ? ' active' : '') ?>" href="<?php echo base_url('admin/posts') ?>">
-                    <i class="bi bi-card-list me-2"></i> Listar Posts
+                    <i class="bi bi-card-list me-2"></i> Listar
                 </a>
                 <a class="nav-link text-white-50 rounded mb-2<?php echo ($active == 'posts/adicionar' ? ' active' : '') ?>" href="<?php echo base_url('admin/posts/adicionar') ?>">
                     <i class="bi bi-plus-square me-2"></i> Novo Post
