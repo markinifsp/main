@@ -21,7 +21,7 @@
             <form method="POST">
                 <div class="mb-4">
                     <label for="titulo" class="form-label fw-bold">Título do Vaga</label>
-                    <input type="text" id="titulo" name="titulo" placeholder="Escreva titulo de Sertanejo" class="form-control form-control-lg rounded-3" required>
+                    <input type="text" id="titulo" name="titulo" placeholder="Escreva titulo da vaga" class="form-control form-control-lg rounded-3" required>
                 </div>
                 <div class="mb-4">
                     <label for="resumo" class="form-label fw-bold">Resumo do Vaga</label>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="conteudo" class="form-label fw-bold">Conteúdo</label>
-                    <textarea id="conteudo" name="conteudo" rows="15" placeholder="Comece a escrever seu artigo aqui..." class="form-control rounded-3" required></textarea>
+                    <textarea id="conteudo" name="conteudo" rows="15" placeholder="Escreva a descrição da vaga" class="form-control rounded-3" required></textarea>
                 </div>
                 <div class="mb-5">
                     <label for="categoria_id" class="form-label fw-bold">Categoria</label>

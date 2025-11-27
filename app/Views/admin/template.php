@@ -73,7 +73,7 @@
     <script>
         $(document).ready(function() {
             $('#conteudo').summernote({
-                placeholder: 'Comece a escrever seu artigo aqui...',
+                placeholder: 'Comece a descrever sua vaga...',
                 tabsize: 2,
                 height: 350, // Altura do editor
                 toolbar: [

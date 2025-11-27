@@ -32,6 +32,7 @@
                         Cadastrar Categoria
                     </button>
                 </div>
+                
             </form>
         </div>
     </div>
