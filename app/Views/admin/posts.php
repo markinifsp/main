@@ -3,9 +3,10 @@
 <?php $this->section('conteudo') ?>
 
     <header class="d-flex justify-content-between align-items-center mt-5 mb-5 pt-3">
-        <h1 class="display-6 fw-bold text-dark">Gerenciamento de Vagas</h1>
+        <h1 class="display-6 fw-bold text-dark">Gerenciamento de Vagas 🧑‍💼 
+        </h1>
         <a href="<?php echo base_url('admin/posts/adicionar') ?>" class="btn btn-primary shadow-sm">
-            <i class="bi bi-plus me-1"></i> Novo Post
+            <i class="bi bi-plus me-1"></i>+ Criar Vaga 
         </a>
     </header>
 
@@ -16,9 +17,9 @@
                 <table class="table table-striped table-hover mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col" class="py-3">Título</th>
-                            <th scope="col" class="py-3 d-none d-md-table-cell">Categoria</th>
-                            <th scope="col" class="py-3 d-none d-sm-table-cell">Autor</th>
+                            <th scope="col" class="py-3">Descrição da Vaga</th>
+                            <th scope="col" class="py-3 d-none d-md-table-cell">Categoria - Profissão</th>
+                            <th scope="col" class="py-3 d-none d-sm-table-cell">Criado por</th>
                             <th scope="col" class="py-3">Ações</th>
                         </tr>
                     </thead>
