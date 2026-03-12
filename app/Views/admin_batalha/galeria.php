@@ -1,0 +1,3 @@
+<?= view('admin_batalha/_header') ?>
+<h1>Gerenciar Galeria</h1><form method="post" enctype="multipart/form-data" action="/admin/galeria/salvar" class="card grid2"><input name="id" placeholder="ID"><input name="imagem" placeholder="URL imagem"><input type="file" name="imagem_upload"><input name="legenda" placeholder="Legenda"><input name="referencia" placeholder="Associar a evento/edição"><button class="btn">Salvar Foto</button></form><div class="grid3"><?php foreach($itens as $i): ?><div class="card"><img src="<?= esc($i['imagem']) ?>"><p><?= esc($i['legenda']) ?></p><a href="/admin/galeria/excluir/<?= esc($i['id']) ?>">Excluir</a></div><?php endforeach; ?></div>
+<?= view('admin_batalha/_footer') ?>

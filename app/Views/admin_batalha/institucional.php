@@ -1,0 +1,3 @@
+<?= view('admin_batalha/_header') ?>
+<h1>Conteúdo Institucional</h1><form method="post" action="/admin/institucional/salvar" class="card grid2"><textarea name="sobre" placeholder="Texto sobre"><?= esc($inst['sobre'] ?? '') ?></textarea><input name="endereco" value="<?= esc($inst['endereco'] ?? '') ?>" placeholder="Endereço"><input name="instagram" value="<?= esc($inst['instagram'] ?? '') ?>" placeholder="Instagram"><input name="youtube" value="<?= esc($inst['youtube'] ?? '') ?>" placeholder="YouTube"><input name="banner" value="<?= esc($inst['banner'] ?? '') ?>" placeholder="Banner"><button class="btn">Salvar</button></form>
+<?= view('admin_batalha/_footer') ?>
