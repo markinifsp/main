@@ -1,0 +1,5 @@
+<?= view('admin_batalha/_header') ?>
+<h1>Gerenciar MCs</h1>
+<form method="post" enctype="multipart/form-data" action="/admin/mcs/salvar" class="card grid2"><input name="id" placeholder="ID (edite para atualizar)"><input name="nome_artistico" placeholder="Nome artístico" required><input name="cidade" placeholder="Cidade/Bairro"><input name="foto" placeholder="URL da foto"><input type="file" name="foto_upload"><textarea name="bio" placeholder="Bio"></textarea><input name="pontuacao" type="number" placeholder="Pontuação"><input name="participacoes" type="number" placeholder="Participações"><input name="vitorias" type="number" placeholder="Vitórias"><input name="titulos" type="number" placeholder="Títulos"><button class="btn">Salvar MC</button></form>
+<table class="table"><tr><th>ID</th><th>Nome</th><th>Pontos</th><th>Ações</th></tr><?php foreach($mcs as $mc): ?><tr><td><?= esc($mc['id']) ?></td><td><?= esc($mc['nome_artistico']) ?></td><td><?= esc($mc['pontuacao']) ?></td><td><a href="/admin/mcs/excluir/<?= esc($mc['id']) ?>">Excluir</a></td></tr><?php endforeach; ?></table>
+<?= view('admin_batalha/_footer') ?>

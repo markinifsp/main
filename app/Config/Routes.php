@@ -2,35 +2,39 @@
 
 use CodeIgniter\Router\RouteCollection;
 
-/**
- * @var RouteCollection $routes
- */
-$routes->get('/', 'Home::index');
-$routes->get('/posts/(:num)', 'Posts::index/$1');
+/** @var RouteCollection $routes */
+$routes->get('/', 'Site::home');
+$routes->get('/sobre', 'Site::sobre');
+$routes->get('/eventos', 'Site::eventos');
+$routes->get('/mcs', 'Site::mcs');
+$routes->get('/mcs/(:segment)', 'Site::mc/$1');
+$routes->get('/ranking', 'Site::ranking');
+$routes->get('/edicoes', 'Site::edicoes');
+$routes->get('/galeria', 'Site::galeria');
+$routes->get('/contato', 'Site::contato');
 
-$routes->match(['get', 'post'], '/login', 'Login::index');
-$routes->match(['get', 'post'], '/registrar', 'Registrar::index');
+$routes->match(['get', 'post'], '/admin/login', 'Admin\Auth::login');
+$routes->get('/admin/logout', 'Admin\Auth::logout');
 
-//Grupo de Rotas do painel de admin
-$routes->group('admin', ['filter' => 'auth:usuario,admin'], static function($routes) {
-    $routes->get('logout', 'Admin\Logout::index');
+$routes->group('admin', ['filter' => 'adminauth'], static function ($routes) {
+    $routes->get('', 'Admin\Painel::index');
 
-    //exemplo agrupamento de rotas mesmo controller
-    $routes->group('posts', static function($routes){
-        $routes->get('', 'Admin\Posts::index');
-        $routes->get('(:any)', 'Admin\Posts::$1');
+    $routes->get('mcs', 'Admin\Painel::mcs');
+    $routes->post('mcs/salvar', 'Admin\Painel::salvarMc');
+    $routes->get('mcs/excluir/(:num)', 'Admin\Painel::excluirMc/$1');
 
-        $routes->post('adicionar', 'Admin\Posts::adicionar');
-        $routes->post('editar/(:num)', 'Admin\Posts::editar/$1');
-    });
+    $routes->get('eventos', 'Admin\Painel::eventos');
+    $routes->post('eventos/salvar', 'Admin\Painel::salvarEvento');
+    $routes->get('eventos/excluir/(:num)', 'Admin\Painel::excluirEvento/$1');
 
-    //categorias
-    $routes->group('categorias', static function($routes){
-        $routes->get('', 'Admin\Categorias::index');
-        $routes->get('(:any)', 'Admin\Categorias::$1');
+    $routes->get('edicoes', 'Admin\Painel::edicoes');
+    $routes->post('edicoes/salvar', 'Admin\Painel::salvarEdicao');
+    $routes->get('edicoes/excluir/(:num)', 'Admin\Painel::excluirEdicao/$1');
 
-        $routes->post('adicionar', 'Admin\Categorias::adicionar');
-        $routes->post('editar/(:num)', 'Admin\Categorias::editar/$1');
-    });
+    $routes->get('galeria', 'Admin\Painel::galeria');
+    $routes->post('galeria/salvar', 'Admin\Painel::salvarFoto');
+    $routes->get('galeria/excluir/(:num)', 'Admin\Painel::excluirFoto/$1');
+
+    $routes->get('institucional', 'Admin\Painel::institucional');
+    $routes->post('institucional/salvar', 'Admin\Painel::salvarInstitucional');
 });
-
